@@ -1,0 +1,26 @@
+{
+  "name": "juno",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bulma": "^0.7.1",
+    "feather-icons": "^4.7.0",
+    "react": "^16.3.2",
+    "react-content-loader": "^3.1.2",
+    "react-dom": "^16.3.2",
+    "react-feather": "^1.1.0",
+    "react-scripts": "1.1.4",
+    "react-transition-group": "^2.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.1"
+  }
+}
