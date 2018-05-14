@@ -6,7 +6,7 @@ import './../App.css';
 import Post from './post.js';
 import api from './api';
 
-import * as Icon from 'react-feather';
+import * as Icon from 'react-feather'; // eslint-disable-next-line
 import ContentLoader from 'react-content-loader';
 
 class Fluff extends Component {
@@ -15,8 +15,9 @@ class Fluff extends Component {
     super(props);
     this.collapseAll = this.collapseAll.bind(this);
     this.state={
-      collapsed: false,
+      collapsed: true,
       stories: [],
+      loaded: false,
     };
   }
 
@@ -25,6 +26,7 @@ class Fluff extends Component {
       .then(response => {
         this.setState({
           stories: response.data,
+          loaded: true,
         });
       });
   }
@@ -63,14 +65,14 @@ class Fluff extends Component {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Last Update</p>
-              <p className="title">3m2d</p>
+              <p className="title">2m3d</p>
             </div>
           </div>
         </nav>
 
         {
           this.state.stories.map((story, id)=>{
-            return <Post key={id} id={story.pk} collapsed={this.state.collapsed}/>;
+            return <Post key={id} id={story.pk} title={story.title} date={story.date} collapsed={this.state.collapsed} />;
           })
         }
          

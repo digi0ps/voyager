@@ -72,23 +72,32 @@ html::-webkit-scrollbar-thumb{ background-color: #bdbdbd; }
   margin-top: 1rem;
 }
 
-@media (min-width: 767px) {
-    img {
-    margin-top: 1rem;
-    height: auto;
-    max-width: 150% !important;
-    margin-left: calc(-25%);
-  }
-
-  .caption {
+.caption {
     padding-left: 32px;
     padding-right: 32px;
     font-size: 14px;
     line-height: 24px;
     color: #757575;
     text-align: left;
+    margin-bottom: 1rem;
+  }
+
+@media (max-width: 767px) {
+  .caption {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 767px) {
+    img {
+      margin-top: 1rem;
+      height: auto;
+      max-width: 150% !important;
+      margin-left: calc(-25%);
+  }
+
+  .caption {
     width: 150%;
     margin-left: calc(-25%);
-    margin-bottom: 1rem;
   }
 }

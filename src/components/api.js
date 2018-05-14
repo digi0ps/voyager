@@ -5,7 +5,7 @@ const host = 'http://localhost:8000/api';
 const api = {
   story: (id) => {
     return Axios({
-      url: `${host}/stories/${id}`,
+      url: `${host}/stories/${id}/`,
       method: 'get',
     })
       .then(function(response) {
