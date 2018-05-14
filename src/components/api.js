@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const host = 'http://localhost:8000/api';
+const host = 'https://juno.anotherdude.me/api';
 
 const api = {
   story: (id) => {
