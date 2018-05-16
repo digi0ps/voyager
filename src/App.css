@@ -7,6 +7,10 @@ a {
   color: #6534ff !important;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 .date {
   color: #5f6368;
   font-family: 'Roboto Mono', monospace;
@@ -128,10 +132,20 @@ a {
   vertical-align: -7px;
 }
 
+.last-update {
+  font-size: 1.5rem !important;
+  margin-top: -5px !important;
+  margin-bottom: 7.5px !important;
+}
+
+.last-update-heading {
+  margin-bottom: 0px !important;
+}
+
 .build-tag {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 17px;
+  padding-left: 9px;
 }
 
 @media (max-width: 769px) {

@@ -11,7 +11,7 @@ class Timeline extends Component {
           <div className="control">
             <div className="tags has-addons">
               <span className="tag is-dark">build</span>
-              <span className="tag is-danger">failing</span>
+              <span className="tag is-success">stable</span>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ class Timeline extends Component {
           </div>
         </div>
 
-        <div className="timeline-item is-danger">
+        {/*<div className="timeline-item is-danger">
           <div className="timeline-marker is-danger">
           </div>
           <div className="timeline-content">
@@ -47,7 +47,7 @@ class Timeline extends Component {
               Pants were set on fire. However, no real pants were harmed in the process.
             </p>
           </div>
-        </div>
+        </div>*/}
 
         <div className="timeline-item is-danger">
           <div className="timeline-marker is-danger">
@@ -55,7 +55,7 @@ class Timeline extends Component {
           <div className="timeline-content">
             <p className="heading">January 2017</p>
             <p>
-              Co-founded uniqna.com, a university based news and event aggregator, with <a href="https://github.com/@digi0ps">@Sriram</a>
+              Co-founded uniqna.com, a university based news and event aggregator, with <a href="https://github.com/digi0ps">@sriram</a>
             </p>
           </div>
         </div>

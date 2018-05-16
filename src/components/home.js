@@ -18,6 +18,12 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    let links = document.links;
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].id !== 'fluff' && links[i].text !== 'work' && links[i].text !== 'contact') {
+        links[i].target = '_blank';
+      }
+    }
   }
 
   toggleChangeLog() {
@@ -44,19 +50,19 @@ class Home extends Component {
                 <div className="level-item has-text-centered">
                   <div>
                     <p className="heading">Work</p>
-                    <a href="" className="has-text-dark" ><Icon.Briefcase /></a>
+                    <a href="" id="work" className="has-text-dark" ><Icon.Briefcase /></a>
                   </div>
                 </div>
                 <div className="level-item has-text-centered">
                   <div>
                     <p className="heading">Blog</p>
-                    <a href="/fluff" className="has-text-dark"><Icon.Book /></a>
+                    <a href="/fluff" id="fluff" className="has-text-dark"><Icon.Book /></a>
                   </div>
                 </div>
                 <div className="level-item has-text-centered">
                   <div>
                     <p className="heading">Contact</p>
-                    <a href="" className="has-text-dark"><Icon.Mail /></a>
+                    <a href="" id="contact" className="has-text-dark"><Icon.Mail /></a>
                   </div>
                 </div>
               </nav>
@@ -73,7 +79,7 @@ class Home extends Component {
           <div className="column is-4 is-offset-4 extra-padding currently-working monospace">
             <div className="content">
               <p>Hi, I dabble in all things computer science, math, physics, and design. I'm currently an undergraduate at <span className="vit-color">Vellore Institute of Technology</span>, majoring in Computer Science and Engineering.</p>
-              <p>I also <span className="blog-color">write for my blog</span>, well I try, and also post photos on <span className="has-text-danger">instagram</span>. When I'm not studying, I work on open source projects and share my code with the world on <span className="has-text-dark">github</span>, and spend the rest of my time lurking around <span className="reddit-color">reddit</span> and learning new ways to actively make myself better at adulting.</p>
+              <p>I also <a href="/fluff" className="blog-color">write for my blog</a>, well I try, and also post photos on <a href="https://www.instagram.com/jeremyphilemon" className="has-text-danger">instagram</a>. When I'm not studying, I work on open source projects and share my code with the world on <a href="https://github.com/jeremyphilemon" className="has-text-dark">github</a>, and spend the rest of my time lurking around <span className="reddit-color">reddit</span> and learning new ways to actively make myself better at adulting.</p>
               <p>Apart from that, I sometimes make awkward faces and try to win arguments with strangers over the internet.</p>
               <p>If you're looking to get in touch or just want to send me a joke, then check out the contact page.</p>
               <p>Thanks for dropping by!</p><br/>

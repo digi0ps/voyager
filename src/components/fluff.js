@@ -66,8 +66,8 @@ class Fluff extends Component {
           </div>
           <div className="level-item has-text-centered">
             <div>
-              <p className="heading">Last Update</p>
-              <p className="title">2m3d</p>
+              <p className="heading last-update-heading">Last Update</p>
+              <p className="title last-update">2m3d</p>
             </div>
           </div>
         </nav>
