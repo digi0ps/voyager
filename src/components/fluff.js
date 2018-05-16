@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css';
 import './../App.css';
 
 import Post from './post.js';
-import api from './api';
+import api from './api.js';
 
 import * as Icon from 'react-feather'; // eslint-disable-next-line
 import ContentLoader from 'react-content-loader';
@@ -39,13 +39,15 @@ class Fluff extends Component {
 
   render() {
     return (
-      <div className="App site-content">
+      <div className="site-content">
 
         <nav className="level is-mobile is-unselectable">
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Back</p>
-              <Icon.ArrowLeft />
+              <a href="/" className="has-text-dark">
+                <Icon.ArrowLeft />
+              </a>
             </div>
           </div>
           <div className="level-item has-text-centered">
