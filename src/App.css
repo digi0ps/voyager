@@ -160,10 +160,18 @@ a:hover {
 
 @media (min-width: 769px) {
   img {
-      margin-top: 1rem;
-      height: auto;
-      max-width: 150% !important;
-      margin-left: calc(-25%);
+    margin-top: 1rem;
+    height: auto;
+    max-width: 150% !important;
+    margin-left: calc(-25%);
+  }
+  iframe {
+    border: none;
+    width: 60vw;
+    height: 33.75vw;
+    margin-left: -50%;
+    border-radius: 0;
+    overflow-y: auto;
   }
   .caption {
     width: 150%;

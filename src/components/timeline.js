@@ -16,8 +16,8 @@ class Timeline extends Component {
           </div>
         </div>
 
-        <div className="timeline-item">
-          <div className="timeline-marker is-icon">
+        <div className="timeline-item is-dark">
+          <div className="timeline-marker is-dark">
           </div>
           <div className="timeline-content">
             <p className="heading">January 2018</p>
@@ -26,7 +26,7 @@ class Timeline extends Component {
         </div>
 
         <header className="timeline-header">
-          <span className="tag">2018</span>
+          <span className="tag is-dark">2018</span>
         </header>
 
         <div className="timeline-item is-danger">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import 'bulma/css/bulma.css';
 import './../App.css';
+import 'bulma-checkradio/dist/bulma-checkradio.min.css';
 
 import Post from './post.js';
 import api from './api.js';

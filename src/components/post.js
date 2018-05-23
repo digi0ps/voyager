@@ -60,7 +60,7 @@ class Post extends Component {
       this.setState({
         preloaded: false,
       });
-    }.bind(this), 500);
+    }.bind(this), 400);
   }
 
   componentWillReceiveProps(nextProps) {
