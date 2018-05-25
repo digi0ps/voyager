@@ -1,7 +1,34 @@
-html::-webkit-scrollbar{ background-color: whitesmoke; width: 4px; height: 0;}
-html::-webkit-scrollbar-thumb{ background-color: #bdbdbd; }
-::-moz-selection{ background-color: #424242; color: #ffffff;}
-::selection{ background-color: #424242; color: #ffffff;}
+@font-face {
+     font-family: Cereal;
+     src: url(fonts/Cereal/AirbnbCereal_W_Lt.eot);
+     src: url(fonts/Cereal/AirbnbCereal_W_Lt.eot#) format("eot"), url(fonts/Cereal/WOFF/AirbnbCereal_W_Lt.woff) format("woff");
+     font-weight: 300;
+     font-style: normal
+ }
+ 
+ @font-face {
+     font-family: Cereal;
+     src: url(fonts/Cereal/AirbnbCereal_W_Bk.eot);
+     src: url(fonts/Cereal/AirbnbCereal_W_Bk.eot#) format("eot"), url(fonts/Cereal/WOFF/AirbnbCereal_W_Bk.woff) format("woff");
+     font-weight: 400;
+     font-style: normal
+ }
+ 
+ @font-face {
+     font-family: Cereal;
+     src: url(fonts/Cereal/AirbnbCereal_W_Bd.eot);
+     src: url(fonts/Cereal/AirbnbCereal_W_Bd.eot#) format("eot"), url(fonts/Cereal/WOFF/AirbnbCereal_W_Bd.woff) format("woff");
+     font-weight: 600;
+     font-style: normal
+ }
+ 
+ @font-face {
+     font-family: Cereal;
+     src: url(fonts/Cereal/AirbnbCereal_W_XBd.eot);
+     src: url(fonts/Cereal/AirbnbCereal_W_XBd.eot#) format("eot"), url(fonts/Cereal/WOFF/AirbnbCereal_W_XBd.woff) format("woff");
+     font-weight: 700;
+     font-style: normal
+ }
 
 a {
   color: #6534ff !important;
@@ -11,10 +38,19 @@ a:hover {
     text-decoration: underline;
 }
 
+.cereal {
+  font-family: Cereal;
+}
+
 .date {
   color: #5f6368;
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
+}
+
+.whales {
+  width: 300px !important;
+  margin: auto !important;
 }
 
 .monospace {
@@ -34,6 +70,7 @@ a:hover {
 }
 
 .story {
+  font-family: Cereal;
   line-height: 24px;
 }
 
@@ -47,8 +84,8 @@ a:hover {
 }
 
 .extra-padding {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
 .footer {
@@ -107,13 +144,30 @@ a:hover {
   color: #7a7a7a;
 }
 
+.blackhole {
+  font-size: 20vw;
+}
+
 .anchor {
   margin: 1rem;
   padding-left: 3px;
 }
 
 .hero-less-bottom-padding {
-  padding-bottom: 2.5rem !important;
+  padding-bottom: 6.5rem !important;
+}
+
+.title-secondary-color {
+  color: black;
+}
+
+.home-title {
+  color: black;
+  text-align: left;
+  margin-bottom: 5rem;
+  line-height: 60px;
+  padding-bottom: 1rem;
+  font-size: 5rem;
 }
 
 .vit-color {
@@ -132,16 +186,6 @@ a:hover {
   vertical-align: -7px;
 }
 
-.last-update {
-  font-size: 1.5rem !important;
-  margin-top: -5px !important;
-  margin-bottom: 7.5px !important;
-}
-
-.last-update-heading {
-  margin-bottom: 0px !important;
-}
-
 .build-tag {
   margin-left: auto;
   margin-right: auto;
@@ -156,14 +200,20 @@ a:hover {
     padding: 1rem;
     font-size: 0.75rem !important;
   }
+  iframe {
+    border: none;
+    width: calc(100vw - 2.5rem);
+    height: 50.8vw;
+    border-radius: 0;
+  }
 }
 
 @media (min-width: 769px) {
   img {
     margin-top: 1rem;
     height: auto;
-    max-width: 150% !important;
-    margin-left: calc(-25%);
+    max-width: 250% !important;
+    margin-left: calc(-75%);
   }
   iframe {
     border: none;

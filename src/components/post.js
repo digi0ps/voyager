@@ -60,7 +60,7 @@ class Post extends Component {
       this.setState({
         preloaded: false,
       });
-    }.bind(this), 400);
+    }.bind(this), 0);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -96,7 +96,7 @@ class Post extends Component {
           .then(response => {
             this.setState({loaded: true, story: response.data});
           });
-      }.bind(this), 500);
+      }.bind(this), 0);
       this.setState({
         apiLock: true,
       });
@@ -122,8 +122,8 @@ class Post extends Component {
           <div className="column is-4 is-offset-4 remove-padding">
             <div className="box is-unselectable" style={{paddingBottom: this.state.collapsed ? '0rem': '1.25rem'}}>
               <h2 className="subtitle date text-is-small">{this.convertDate(this.state.date)}</h2>
-              <h1 className="title is-3" onClick={this.toggle}>{this.state.title}</h1>
-              <div className="content story" style={{display: this.state.collapsed ? 'none': 'inherit'}}>
+              <h1 className="title is-3 cereal" onClick={this.toggle}>{this.state.title}</h1>
+              <div className="content story is-cereal" style={{display: this.state.collapsed ? 'none': 'inherit'}}>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@ class Post extends Component {
           <div className="column is-4 is-offset-4 remove-padding">
             <div className="box is-unselectable" style={{paddingBottom: this.state.collapsed ? '0rem': '1.25rem'}}>
               <h2 className="subtitle date text-is-small">{this.convertDate(this.state.date)}</h2>
-              <h1 className="title is-3" onClick={this.toggle}>{this.state.title}</h1>
+              <h1 className="title is-3 cereal" onClick={this.toggle}>{this.state.title}</h1>
               <div className="content story" style={{display: this.state.collapsed ? 'none': 'inherit'}}>
                 <PostLoader />
               </div>
@@ -157,7 +157,7 @@ class Post extends Component {
           <div className="column is-4 is-offset-4 remove-padding">
             <div className="box is-unselectable" style={{paddingBottom: this.state.collapsed ? '0rem': '1.25rem'}}>
               <h2 className="subtitle date text-is-small">{this.convertDate(this.state.date)}</h2>
-              <h1 className="title is-3" onClick={this.toggle}>{this.state.title}</h1>
+              <h1 className="title is-3 cereal" onClick={this.toggle}>{this.state.title}</h1>
               <div className="content story" style={{display: this.state.collapsed ? 'none': 'inherit'}}>
                 <div dangerouslySetInnerHTML={{ __html: this.state.story.story }} />
               </div>
