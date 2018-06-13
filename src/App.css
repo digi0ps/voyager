@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 @font-face {
      font-family: Cereal;
      src: url(fonts/Cereal/AirbnbCereal_W_Lt.eot);
@@ -158,20 +160,23 @@ a:hover {
 }
 
 .title-secondary-color {
-  color: black;
+  color: #424242;
 }
 
 .home-title {
-  color: black;
+  color: #424242;
   text-align: left;
-  margin-bottom: 5rem;
-  line-height: 60px;
+  line-height: 0px;
   padding-bottom: 1rem;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .vit-color {
-  color: #3949AB !important
+  color: #3949AB !important;
+}
+
+.xkcd-color {
+  color: #7A7A7A !important;
 }
 
 .blog-color {
@@ -190,6 +195,13 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   padding-left: 9px;
+}
+
+.stats {
+  position: fixed;
+  font-size: 0.7rem;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 @media (max-width: 769px) {
