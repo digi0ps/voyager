@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const host = 'https://juno.anotherdude.me/api';
+const host = 'http://localhost:8000/api';
 
 const api = {
   story: (id) => {
@@ -15,6 +15,15 @@ const api = {
   stories: () => {
     return Axios({
       url: `${host}/stories/`,
+      method: 'get',
+    })
+      .then(function(response) {
+        return response;
+      });
+  },
+  changelogs: () => {
+    return Axios({
+      url: `${host}/stats/changelogs/`,
       method: 'get',
     })
       .then(function(response) {

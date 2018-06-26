@@ -55,6 +55,10 @@ a:hover {
   margin: auto !important;
 }
 
+.whales-margin {
+  margin-top: 1rem;
+}
+
 .monospace {
   font-family: 'Roboto Mono', monospace;
 }
@@ -180,7 +184,7 @@ a:hover {
 }
 
 .blog-color {
-  color: #DEB069 !important;
+  color: #D60270 !important;
 }
 
 .reddit-color {
@@ -202,6 +206,33 @@ a:hover {
   font-size: 0.7rem;
   bottom: 1rem;
   right: 1rem;
+}
+
+.changelog-date {
+  display: block;
+  min-width: 8rem;
+}
+
+.changelog-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.changelog-parent {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.changelog-info {
+  font-size: 0.7rem;
+  display: block;
+  visibility: hidden;
+  max-height: 0;
+  transition: visibility 0s, max-height 0.5s linear;
+}
+
+.remove-bottom-padding {
+  padding-bottom: 0;
 }
 
 @media (max-width: 769px) {
