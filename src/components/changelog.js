@@ -27,10 +27,8 @@ class Changelog extends Component {
     if (dt < 10) {
       dt = '0' + dt;
     }
-    if (month < 10) {
-      month = '0' + month;
-    }
-    return(dt+'/' + month + '/'+year);
+    month = date.toLocaleString('en-us', { month: 'long' });
+    return(month.slice(0,3)+' '+year);
   }
 
   enterHover() {
