@@ -28,7 +28,7 @@ class Home extends Component {
   componentDidMount() {
     let links = document.links;
     for (var i = 0; i < links.length; i++) {
-      if (links[i].id !== 'fluff' && links[i].text !== 'work' && links[i].text !== 'contact') {
+      if (links[i].id !== 'fluff' && links[i].id !== 'work' && links[i].id !== 'contact') {
         links[i].target = '_blank';
       }
     }
@@ -72,7 +72,7 @@ class Home extends Component {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Contact</p>
-              <a href="" id="contact" className="has-text-dark"><Icon.Mail /></a>
+              <a href="/contact" id="contact" className="has-text-dark"><Icon.Mail /></a>
             </div>
           </div>
         </nav>

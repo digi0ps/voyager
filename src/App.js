@@ -8,6 +8,7 @@ import Fluff from './components/fluff.js';
 import Home from './components/home.js';
 import Footer from './components/footer.js';
 import BlackHole from './components/blackhole.js';
+import Contact from './components/contact.js';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/fluff" component={Fluff} />
+            <Route path="/contact" component={Contact} />
             <Route path="*" component={BlackHole} />
           </Switch>
         </Router>

@@ -11,7 +11,7 @@ class BlackHole extends Component {
           <div class="hero-body">
             <div class="container">
               <h1 class="title blackhole cereal">
-                !@#$
+                404
               </h1>
             </div>
           </div>

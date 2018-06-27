@@ -152,6 +152,7 @@ a:hover {
 
 .blackhole {
   font-size: 20vw;
+  margin-top: 5rem;
 }
 
 .anchor {
@@ -234,6 +235,14 @@ a:hover {
 
 .remove-bottom-padding {
   padding-bottom: 0;
+}
+
+a.contact {
+  color: #eb0000 !important;
+}
+
+.contact-email-margin {
+  margin-left: 1.1rem;
 }
 
 @media (max-width: 769px) {
