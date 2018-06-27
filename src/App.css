@@ -203,6 +203,7 @@ a:hover {
 
 .stats {
   position: fixed;
+  z-index: 999;
   font-size: 0.7rem;
   bottom: 1rem;
   right: 1rem;

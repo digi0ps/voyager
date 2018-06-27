@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import * as Icon from 'react-feather';
-
 import 'bulma/css/bulma.css';
 import './../App.css';
 
@@ -11,6 +9,7 @@ class Changelog extends Component {
     super(props);
     this.enterHover = this.enterHover.bind(this);
     this.leaveHover = this.leaveHover.bind(this);
+    this.clickToggle = this.clickToggle.bind(this);
     this.state={
       hover: false,
       title: this.props.title,
@@ -43,12 +42,18 @@ class Changelog extends Component {
     });
   }
 
+  clickToggle() {
+    this.setState({
+      hover: !this.state.hover,
+    });
+  }
+
   render() {
     return (
       <div className="columns">
         <div className="column is-4 is-offset-4 extra-padding monospace remove-bottom-padding">
 
-          <div className="changelog-parent" onMouseEnter={this.enterHover} onMouseLeave={this.leaveHover}>
+          <div className="changelog-parent" onMouseEnter={this.enterHover} onMouseLeave={this.leaveHover} onClick={this.clickToggle}>
             <div className="date changelog-date">{this.convertDate(this.state.date)}</div>
             <div className="changelog-desc">
               <div>{this.state.title}</div>

@@ -2,14 +2,14 @@ import 'bulma/css/bulma.css';
 import './../App.css';
 import 'bulma-timeline/dist/bulma-timeline.min.css';
 
-import Timeline from './timeline.js';
 import Changelog from './changelog.js';
-
 import api from './api.js';
 
+import moment from 'moment';
 
 import React, { Component } from 'react';
 import * as Icon from 'react-feather';
+
 
 class Home extends Component {
 
@@ -19,6 +19,9 @@ class Home extends Component {
     this.state={
       changelog: false,
       changelogList: [],
+      alpha: moment([1998, 3, 6]),
+      nf: moment([2018, 5, 27]),
+      present: moment(),
     };
   }
 
@@ -85,7 +88,11 @@ class Home extends Component {
               <p>Apart from that, I sometimes make awkward faces and try to win arguments with strangers over the <a className="xkcd-color" href="https://xkcd.com/386/">internet</a>.</p>
               <p>If you're looking to get in touch or just want to send me a joke, then check out the contact page.</p>
               <p>Thanks for dropping by!</p>
-              <div className="stats">🏳️‍🌈</div>
+              <div className="stats">
+                {this.state.present.diff(this.state.alpha, 'days')}
+                π
+                {this.state.present.diff(this.state.nf, 'days')}
+              </div>
               <p>
                 [<a onClick={this.toggleChangeLog}>{this.state.changelog ? '-' : '+'}</a>] Changelog
               </p>
