@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const host = 'https://jrmyphlmn.me/api';
+const host = 'https://juno.jrmyphlmn.me/api';
 
 const api = {
   story: (id) => {
