@@ -11,7 +11,7 @@ class Footer extends Component {
   }
 
   componentDidMount() {
-    let whitelist=['/fluff', '/'];
+    let whitelist=['/fluff', '/', '/contact', ];
     if(whitelist.includes(window.location.pathname)) {
       this.setState({
         visibility: true,

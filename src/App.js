@@ -9,6 +9,7 @@ import Home from './components/home.js';
 import Footer from './components/footer.js';
 import BlackHole from './components/blackhole.js';
 import Contact from './components/contact.js';
+import FinitePlaylist from './components/finiteplaylist.js';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/fluff" component={Fluff} />
             <Route path="/contact" component={Contact} />
+            <Route path="/alohomora" component={FinitePlaylist} />
             <Route path="*" component={BlackHole} />
           </Switch>
         </Router>

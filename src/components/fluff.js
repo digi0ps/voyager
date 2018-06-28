@@ -68,7 +68,9 @@ class Fluff extends Component {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Hmm</p>
-              <Icon.Truck />
+              <a href="/alohomora" className="has-text-dark">
+                <Icon.Truck />
+              </a>
             </div>
           </div>
         </nav>

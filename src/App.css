@@ -245,6 +245,79 @@ a.contact {
   margin-left: 1.1rem;
 }
 
+.input {
+  box-shadow: none;
+  border: 2px solid;
+  border-color: #b5b5b5;
+}
+
+.playlist-hero {
+  margin-top: 3rem;
+}
+
+audio {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.album-art img {
+  border-radius: 3px !important;
+  margin: 0;
+}
+
+.progress {
+  height: 0.5rem !important;
+}
+
+.song-parent {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.song-parent:hover {
+  background: white;
+  color: #424242 !important;
+  margin-bottom: 0.3rem;
+}
+
+.song-parent .title:hover {
+  color: #424242;
+}
+
+.song-date {
+  font-size: 0.7rem !important;
+}
+
+.song-name {
+  cursor: pointer;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.song-duration {
+  font-size: 0.7rem !important;
+  margin-right: 0.5rem;
+}
+
+.player-reduce-margin {
+  margin-bottom: -3rem !important;
+}
+
+.xkcdtime {
+  margin: 0;
+  margin-bottom: -10px;
+  width: 100%;
+}
+
+.play-circle svg {
+  vertical-align: middle;
+}
+
+.song-loading {
+  margin-left: auto;
+}
+
 @media (max-width: 769px) {
   .caption {
     font-size: 14px;

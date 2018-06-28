@@ -21,12 +21,12 @@ class Contact extends Component {
 
         <div className="columns">
           <div className="column is-4 is-offset-4 extra-padding currently-working monospace">
-            <h1 className="title cereal home-title"><span className="title-secondary-color">📮 Contact</span></h1>
+            <h1 className="title cereal home-title"><span role="img" aria-label="postbox">📮</span>  Contact</h1>
             <div className="content">
               <p>∆ Email is best <a className="contact" href="mailto:jeremyphilemon@outlook.com"><span className="contact-email-margin">jeremyphilemon[@]outlook.com</span></a></p>
               <p>
-                	∂ <a className="contact" href="https://www.linkedin.com/in/jeremyphilemon/">LinkedIn</a><br />
-					ß <a className="contact" href="https://www.twitter.com/jeremyphilemon">Twitter</a><br />
+                    ∂ <a className="contact" href="https://www.linkedin.com/in/jeremyphilemon/">LinkedIn</a><br />
+                    ß <a className="contact" href="https://www.twitter.com/jeremyphilemon">Twitter</a><br />
               </p>
             </div>
           </div>
