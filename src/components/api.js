@@ -53,7 +53,7 @@ const api = {
   },
   fetchSong: (id) => {
     return Axios({
-      url: `${host}/playlist/${id}`,
+      url: `${host}/playlist/${id}/`,
       method: 'get',
       headers: {'Authorization': `Token ${localStorage.AuthToken}`}
     })

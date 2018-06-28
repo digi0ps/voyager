@@ -75,10 +75,6 @@ class AudioPlayer extends Component {
     }
   }
 
-  componentWillReceiveProps() {
-    this.setState({ isPlaying: false });
-  }
-
   render() {
     return (
       <div className="is-unselectable">
