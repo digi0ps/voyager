@@ -17,7 +17,8 @@ class FinitePlaylist extends Component {
       password: '',
       auth: false,
       playlist: [],
-      nowPlaying: 2,
+      nowPlaying: 3,
+      loaded: false,
     };
   }
 
@@ -26,6 +27,7 @@ class FinitePlaylist extends Component {
       .then(response => {
         this.setState({
           playlist: response.data,
+          loaded: true,
         });
     });
   }
@@ -89,7 +91,7 @@ class FinitePlaylist extends Component {
 
   if(localStorage.AuthToken) {
     return(
-      <div className="is-unselectable">
+      <div className="is-unselectable finite-playlist">
 
 
         <AudioPlayer id={this.state.nowPlaying}/>
@@ -103,6 +105,11 @@ class FinitePlaylist extends Component {
 
               <div className="columns">
           <div className="column is-4 is-offset-4 extra-padding currently-working monospace">
+
+          <div className="has-text-centered" style={{display: this.state.loaded ? 'none' : 'false'}}>
+          <a class="button is-success is-loading has-text-centered"></a>
+          <h1 class="title is-6 cereal playlist-loading">If it's taking too much time, your secret key must've expired.</h1>
+          </div>
 
           {
             this.state.playlist.map((song, id)=>{

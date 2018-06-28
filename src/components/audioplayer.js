@@ -6,7 +6,28 @@ import './../App.css';
 
 import api from './api.js';
 
+import ContentLoader from 'react-content-loader';
+
 import * as Icon from 'react-feather';
+
+const PreLoader = props => (
+  <ContentLoader
+    height={353}
+    width={400}
+    speed={2}
+    primaryColor="#fafafa"
+    secondaryColor="#f4f4f4"
+    style={{display: props.visibility ? 'inherit' : 'none'}}
+    {...props}
+  >
+    <rect x="0" y="0.0" rx="0" ry="0" width="147" height="147" /> 
+    <rect x="0" y="175.05" rx="0" ry="0" width="280" height="38" />
+    <rect x="0" y="230" rx="3" ry="3" width="490" height="15" /> 
+    <rect x="0" y="253" rx="3" ry="3" width="380" height="15" /> 
+    <rect x="0" y="276" rx="3" ry="3" width="375" height="15" />
+    <rect x="0" y="299" rx="3" ry="3" width="370" height="15" />
+  </ContentLoader>
+);
 
 class AudioPlayer extends Component {
 
@@ -18,6 +39,7 @@ class AudioPlayer extends Component {
       isPlaying: false,
       id: this.props.id,
       song: '',
+      loaded: false,
     };
   }
 
@@ -48,7 +70,8 @@ class AudioPlayer extends Component {
         	location: response.data.location, 
         	title: response.data.title, 
         	description: response.data.description, 
-        	art: response.data.art, 
+        	art: response.data.art,
+          loaded: true,
         });
         this.audio.load();
       });
@@ -63,6 +86,8 @@ class AudioPlayer extends Component {
         	title: response.data.title, 
         	description: response.data.description, 
         	art: response.data.art, 
+          isPlaying: true,
+          loaded: true,
         });
         this.audio.load();
         this.audio.play();
@@ -72,6 +97,9 @@ class AudioPlayer extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
       this.updatePlayer(this.props.id);
+      this.setState({
+        loaded: false,
+      });
     }
   }
 
@@ -94,14 +122,14 @@ class AudioPlayer extends Component {
           </div>
           <div className="level-item has-text-centered">
             <div>
-              <p className="heading">Next</p>
-              <a href="/fluff" id="fluff" className="has-text-dark"><Icon.FastForward /></a>
+              <p className="heading">Previous</p>
+              <a href="" id="contact" className="has-text-dark"><Icon.Rewind /></a>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
-              <p className="heading">Previous</p>
-              <a href="/contact" id="contact" className="has-text-dark"><Icon.Rewind /></a>
+              <p className="heading">Next</p>
+              <a href="" id="fluff" className="has-text-dark"><Icon.FastForward /></a>
             </div>
           </div>
         </nav>
@@ -109,16 +137,18 @@ class AudioPlayer extends Component {
         <div className="columns">
           <div className="column is-4 is-offset-4 extra-padding currently-working player-reduce-margin">
 
+            <PreLoader visibility={!this.state.loaded} />
+ 
+            <div className="song-meta" style={{display: this.state.loaded ? 'inherit' : 'none'}}>
+              <figure class="image is-128x128 album-art">
+  		  		    <img src={this.state.art} />
+              </figure>
 
-            <figure class="image is-128x128 album-art">
-		  		<img src={this.state.art} />
-            </figure>
-
-            <h1 className="title cereal is-4">{this.state.title}</h1>
-            <h2 className="subtitle cereal is-6">{this.state.description}</h2>
+              <h1 className="title cereal is-4">{this.state.title}</h1>
+              <h2 className="subtitle cereal is-6">{this.state.description}</h2>
+            </div>
             <h2 className="song-duration is-pulled-right">{Math.floor(this.state.currentTime)}/{Math.floor(this.state.duration) ? Math.floor(this.state.duration) : 0}</h2>
             <progress class="progress is-success" value={(this.state.currentTime/this.state.duration)*100} max="100"></progress>
-
 
             <audio id="audio" ref={(audio)=>{this.audio = audio;}}>
               <source src={this.state.location} type='audio/mpeg'/>

@@ -253,6 +253,7 @@ a.contact {
 
 .playlist-hero {
   margin-top: 3rem;
+  height: 30rem !important;
 }
 
 audio {
@@ -300,6 +301,10 @@ audio {
   margin-right: 0.5rem;
 }
 
+.song-meta {
+  margin-bottom: 1.5rem;
+}
+
 .player-reduce-margin {
   margin-bottom: -3rem !important;
 }
@@ -316,6 +321,10 @@ audio {
 
 .song-loading {
   margin-left: auto;
+}
+
+.playlist-loading {
+  line-height: 20px;
 }
 
 @media (max-width: 769px) {
