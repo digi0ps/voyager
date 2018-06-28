@@ -63,7 +63,7 @@ class FinitePlaylist extends Component {
             <div className="hero-body">
               <div className="container">
                 <h1 className="title cereal">
-                  A finite playlist
+                  Alohomora?
                 </h1>
 
                 <div className="columns">
@@ -98,7 +98,7 @@ class FinitePlaylist extends Component {
           <div className="hero-body">
             <div className="container">
               <h1 className="title cereal has-text-centered">
-                Alohomora?
+                A finite playlist
               </h1>
 
               <div className="columns">
