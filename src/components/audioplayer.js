@@ -72,8 +72,7 @@ class AudioPlayer extends Component {
       	duration: duration,
       });
     });
-    const id = this.state.id;
-  	api.fetchSong(id)
+  	api.fetchSong(this.state.id)
       .then(response => {
         this.setState({
         	song: response.data,
@@ -90,7 +89,7 @@ class AudioPlayer extends Component {
   }
 
   updateHeart() {
-    api.updateHeart(this.state.id)
+    api.updateHeart(this.props.id)
       .then(response => {
         this.setState({
           hearts: response.data.hearts,
@@ -98,8 +97,8 @@ class AudioPlayer extends Component {
       });
   }
 
-  updatePlays(id) {
-    api.updatePlays(id)
+  updatePlays() {
+    api.updatePlays(this.props.id)
       .then(response => {
         this.setState({
           plays: response.data.plays,
@@ -108,8 +107,8 @@ class AudioPlayer extends Component {
   }
   
 
-  updatePlayer(id) {
-  	api.fetchSong(id)
+  updatePlayer() {
+  	api.fetchSong(this.props.id)
       .then(response => {
         this.setState({
           song: response.data,
@@ -131,9 +130,10 @@ class AudioPlayer extends Component {
     if (prevProps.id !== this.props.id) {
       this.setState({
         loaded: false,
+        id: this.props.id,
       });
-      this.updatePlayer(this.props.id);
-      this.updatePlays(this.props.id);
+      this.updatePlayer();
+      this.updatePlays();
     }
   }
 
@@ -188,7 +188,7 @@ class AudioPlayer extends Component {
             <h2 className="is-pulled-right">{Math.floor(this.state.currentTime)}/{Math.floor(this.state.duration) ? Math.floor(this.state.duration) : 0}</h2>
             <progress class="progress is-success" value={(this.state.currentTime/this.state.duration)*100} max="100"></progress>
 
-            <audio id="audio" ref={(audio)=>{this.audio = audio;}}>
+            <audio id="audio" title={this.state.title} ref={(audio)=>{this.audio = audio;}}>
               <source src={this.state.location} type='audio/mpeg'/>
             </audio>
 
