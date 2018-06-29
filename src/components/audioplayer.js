@@ -21,6 +21,8 @@ const PreLoader = props => (
     {...props}
   >
     <rect x="0" y="0.0" rx="0" ry="0" width="147" height="147" /> 
+    <rect x="350" y="0" rx="0" ry="0" width="70" height="20" /> 
+    <rect x="350" y="30" rx="0" ry="0" width="70" height="20" /> 
     <rect x="0" y="175.05" rx="0" ry="0" width="280" height="38" />
     <rect x="0" y="230" rx="3" ry="3" width="490" height="15" /> 
     <rect x="0" y="253" rx="3" ry="3" width="380" height="15" /> 
@@ -96,8 +98,8 @@ class AudioPlayer extends Component {
       });
   }
 
-  updatePlays() {
-    api.updatePlays(this.state.id)
+  updatePlays(id) {
+    api.updatePlays(id)
       .then(response => {
         this.setState({
           plays: response.data.plays,
@@ -110,27 +112,28 @@ class AudioPlayer extends Component {
   	api.fetchSong(id)
       .then(response => {
         this.setState({
-        	song: response.data,
+          song: response.data,
         	location: response.data.location, 
         	title: response.data.title, 
         	description: response.data.description, 
         	art: response.data.art, 
           hearts: response.data.hearts,
+          plays: response.data.plays,
           isPlaying: true,
           loaded: true,
         });
         this.audio.load();
         this.audio.play();
-        this.updatePlays();
       });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
-      this.updatePlayer(this.props.id);
       this.setState({
         loaded: false,
       });
+      this.updatePlayer(this.props.id);
+      this.updatePlays(this.props.id);
     }
   }
 
