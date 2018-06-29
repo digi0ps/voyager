@@ -17,7 +17,7 @@ class FinitePlaylist extends Component {
       password: '',
       auth: false,
       playlist: [],
-      nowPlaying: 3,
+      nowPlaying: 1,
       loaded: false,
     };
   }

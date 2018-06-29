@@ -22,10 +22,10 @@ class Song extends Component {
   render() {
     return (
 
-      <div className="song-parent" onClick={this.props.chooseHandler.bind(null, this.props.id)}>
-        <span className="has-text-white play-circle"><Icon.PlayCircle /></span>
+      <a className="song-parent" onClick={this.props.chooseHandler.bind(null, this.props.id)}>
+        <span className="has-text-white play-circle"><Icon.PlayCircle/></span>
         <h1 className="title cereal is-6 song-name">{this.state.title}</h1>
-      </div>
+      </a>
     );
   }
 }

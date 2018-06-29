@@ -286,6 +286,10 @@ audio {
   color: #424242;
 }
 
+.song-parent:hover {
+  text-decoration: none !important;
+}
+
 .song-date {
   font-size: 0.7rem !important;
 }
@@ -295,7 +299,6 @@ audio {
   margin: 0;
   margin-left: 1rem;
 }
-
 .song-duration {
   font-size: 0.7rem !important;
   margin-right: 0.5rem;
@@ -325,6 +328,49 @@ audio {
 
 .playlist-loading {
   line-height: 20px;
+}
+
+.song-heart {
+  color: red;
+  cursor: pointer;
+  line-height: 19px;
+  margin-right: 0.075rem;
+  margin-bottom: 2px;
+}
+
+.song-eye {
+  cursor: pointer;
+  line-height: 19px;
+}
+
+.song-eye svg {
+  vertical-align: top;
+  margin-left: 0.5rem;
+  float: right;
+}
+
+.song-plays {
+  margin-left: auto;
+}
+
+.song-heart svg:active {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transition: all 0.1s linear;
+}
+
+.song-icons {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  float: right;
+}
+
+.song-heart svg {
+  fill: red;
+  vertical-align: top;
+  margin-left: 0.5rem;
 }
 
 @media (max-width: 769px) {

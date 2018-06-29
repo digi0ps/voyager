@@ -34,12 +34,14 @@ class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.togglePlay = this.togglePlay.bind(this);
+    this.updateHeart = this.updateHeart.bind(this);
     this.audio = React.createRef();
     this.state = {
       isPlaying: false,
       id: this.props.id,
       song: '',
       loaded: false,
+      first: true,
     };
   }
 
@@ -50,6 +52,12 @@ class AudioPlayer extends Component {
     } else {
       this.setState({ isPlaying: false });
       this.audio.pause();
+    }
+    if(!this.state.isPlaying && this.state.first) {
+      this.setState({
+        first: false,
+      });
+      this.updatePlays();
     }
   }
 
@@ -71,11 +79,32 @@ class AudioPlayer extends Component {
         	title: response.data.title, 
         	description: response.data.description, 
         	art: response.data.art,
+          hearts: response.data.hearts,
+          plays: response.data.plays,
           loaded: true,
         });
         this.audio.load();
       });
   }
+
+  updateHeart() {
+    api.updateHeart(this.state.id)
+      .then(response => {
+        this.setState({
+          hearts: response.data.hearts,
+        });
+      });
+  }
+
+  updatePlays() {
+    api.updatePlays(this.state.id)
+      .then(response => {
+        this.setState({
+          plays: response.data.plays,
+        });
+      });
+  }
+  
 
   updatePlayer(id) {
   	api.fetchSong(id)
@@ -86,11 +115,13 @@ class AudioPlayer extends Component {
         	title: response.data.title, 
         	description: response.data.description, 
         	art: response.data.art, 
+          hearts: response.data.hearts,
           isPlaying: true,
           loaded: true,
         });
         this.audio.load();
         this.audio.play();
+        this.updatePlays();
       });
   }
 
@@ -140,6 +171,10 @@ class AudioPlayer extends Component {
             <PreLoader visibility={!this.state.loaded} />
  
             <div className="song-meta" style={{display: this.state.loaded ? 'inherit' : 'none'}}>
+              <div className="song-icons">
+                <span className="is-pulled-right song-heart is-6" onClick={this.updateHeart}>{this.state.hearts}<Icon.Heart size={18} /></span>
+                <span className="is-pulled-right song-eye is-6"><span className="song-plays">{this.state.plays}</span><Icon.Radio size={19} /></span>
+              </div>
               <figure class="image is-128x128 album-art">
   		  		    <img src={this.state.art} />
               </figure>
@@ -147,7 +182,7 @@ class AudioPlayer extends Component {
               <h1 className="title cereal is-4">{this.state.title}</h1>
               <h2 className="subtitle cereal is-6">{this.state.description}</h2>
             </div>
-            <h2 className="song-duration is-pulled-right">{Math.floor(this.state.currentTime)}/{Math.floor(this.state.duration) ? Math.floor(this.state.duration) : 0}</h2>
+            <h2 className="is-pulled-right">{Math.floor(this.state.currentTime)}/{Math.floor(this.state.duration) ? Math.floor(this.state.duration) : 0}</h2>
             <progress class="progress is-success" value={(this.state.currentTime/this.state.duration)*100} max="100"></progress>
 
             <audio id="audio" ref={(audio)=>{this.audio = audio;}}>

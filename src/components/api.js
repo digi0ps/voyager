@@ -61,6 +61,26 @@ const api = {
         return response;
       });
   },
+  updateHeart: (id) => {
+    return Axios({
+      url: `${host}/playlist/${id}/heart/`,
+      method: 'patch',
+      headers: {'Authorization': `Token ${localStorage.AuthToken}`}
+    })
+      .then(function(response) {
+        return response;
+      });
+  },
+  updatePlays: (id) => {
+    return Axios({
+      url: `${host}/playlist/${id}/view/`,
+      method: 'patch',
+      headers: {'Authorization': `Token ${localStorage.AuthToken}`}
+    })
+      .then(function(response) {
+        return response;
+      });
+  },
 };
 
 export default api;
