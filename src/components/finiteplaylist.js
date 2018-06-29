@@ -107,8 +107,8 @@ class FinitePlaylist extends Component {
           <div className="column is-4 is-offset-4 extra-padding currently-working monospace">
 
           <div className="has-text-centered" style={{display: this.state.loaded ? 'none' : 'false'}}>
-          <a class="button is-success is-loading has-text-centered"></a>
-          <h1 class="title is-6 cereal playlist-loading">If it's taking too much time, your secret key must've expired.</h1>
+          <a className="button is-success is-loading has-text-centered">loading</a>
+          <h1 className="title is-6 cereal playlist-loading">If it's taking too much time, your secret key must've expired.</h1>
           </div>
 
           {

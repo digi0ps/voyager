@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import 'bulma/css/bulma.css';
 import './../App.css';
@@ -44,6 +43,7 @@ class AudioPlayer extends Component {
       song: '',
       loaded: false,
       first: true,
+      buffered: false,
     };
   }
 
@@ -63,29 +63,38 @@ class AudioPlayer extends Component {
     }
   }
 
+  hasBuffered() {
+    this.audio.addEventListener('loadeddata', () => {
+      this.setState({
+        buffered: true,
+      });
+    });
+  }
+
   componentDidMount() {
     this.audio.addEventListener('timeupdate', () => {
       let currentTime = this.audio.currentTime;
       let duration = this.audio.duration;
       this.setState({
-      	currentTime: currentTime,
-      	duration: duration,
+        currentTime: currentTime,
+        duration: duration,
       });
     });
-  	api.fetchSong(this.state.id)
+    api.fetchSong(this.state.id)
       .then(response => {
         this.setState({
-        	song: response.data,
-        	location: response.data.location, 
-        	title: response.data.title, 
-        	description: response.data.description, 
-        	art: response.data.art,
+          song: response.data,
+          location: response.data.location, 
+          title: response.data.title, 
+          description: response.data.description, 
+          art: response.data.art,
           hearts: response.data.hearts,
           plays: response.data.plays,
           loaded: true,
         });
         this.audio.load();
       });
+    this.hasBuffered();
   }
 
   updateHeart() {
@@ -105,25 +114,29 @@ class AudioPlayer extends Component {
         });
       });
   }
-  
 
   updatePlayer() {
-  	api.fetchSong(this.props.id)
+    api.fetchSong(this.props.id)
       .then(response => {
         this.setState({
           song: response.data,
-        	location: response.data.location, 
-        	title: response.data.title, 
-        	description: response.data.description, 
-        	art: response.data.art, 
+          location: response.data.location, 
+          title: response.data.title, 
+          description: response.data.description, 
+          art: response.data.art, 
           hearts: response.data.hearts,
           plays: response.data.plays,
           isPlaying: true,
           loaded: true,
+          buffered: false,
         });
         this.audio.load();
         this.audio.play();
       });
+  }
+
+  formatSeconds(s) {
+    return(s-(s%=60))/60+(9<s?':':':0')+s;
   }
 
   componentDidUpdate(prevProps) {
@@ -178,17 +191,19 @@ class AudioPlayer extends Component {
                 <span className="is-pulled-right song-heart is-6" onClick={this.updateHeart}>{this.state.hearts}<Icon.Heart size={18} /></span>
                 <span className="is-pulled-right song-eye is-6"><span className="song-plays">{this.state.plays}</span><Icon.Radio size={19} /></span>
               </div>
-              <figure class="image is-128x128 album-art">
-  		  		    <img src={this.state.art} />
+              <figure className="image is-128x128 album-art">
+                <img alt="album-art "src={this.state.art} />
               </figure>
-
-              <h1 className="title cereal is-4">{this.state.title}</h1>
+              <h1 className="title cereal is-4">
+                {this.state.title}
+                <a className="button art-loading is-loading has-text-centered" style={{visibility: this.state.buffered ? 'hidden' : 'visible'}}>loading</a>
+              </h1>
               <h2 className="subtitle cereal is-6">{this.state.description}</h2>
             </div>
-            <h2 className="is-pulled-right">{Math.floor(this.state.currentTime)}/{Math.floor(this.state.duration) ? Math.floor(this.state.duration) : 0}</h2>
-            <progress class="progress is-success" value={(this.state.currentTime/this.state.duration)*100} max="100"></progress>
+            <h2 className="is-pulled-right song-timestamp">{this.formatSeconds(Math.floor(this.state.currentTime))}/{Math.floor(this.state.duration) ? this.formatSeconds(Math.floor(this.state.duration)) : '00:00'}</h2>
+            <progress className="progress is-success" value={this.state.duration ? (this.state.currentTime/this.state.duration)*100 : 0} max="100"></progress>
 
-            <audio id="audio" title={this.state.title} ref={(audio)=>{this.audio = audio;}}>
+            <audio id="audio" title={this.state.title} poster={this.state.art} ref={(audio)=>{this.audio = audio;}}>
               <source src={this.state.location} type='audio/mpeg'/>
             </audio>
 

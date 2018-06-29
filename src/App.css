@@ -294,14 +294,23 @@ audio {
   font-size: 0.7rem !important;
 }
 
+.art-loading {
+  background: transparent;
+  border: none;
+  width: 1px;
+  height: 1px;
+  padding-top: 27px;
+}
+
 .song-name {
   cursor: pointer;
   margin: 0;
   margin-left: 1rem;
 }
-.song-duration {
-  font-size: 0.7rem !important;
-  margin-right: 0.5rem;
+
+.song-timestamp {
+  font-size: 0.9rem !important;
+  margin-right: 0.3rem;
 }
 
 .song-meta {
@@ -319,7 +328,7 @@ audio {
 }
 
 .play-circle svg {
-  vertical-align: middle;
+  margin-top: 3.5px;
 }
 
 .song-loading {

@@ -31,11 +31,11 @@ const PostLoader = props => (
     {...props}
   >
     <rect x="0" y="4" rx="3" ry="3" width="490" height="15" /> 
-    <rect x="0" y="27.0" rx="3" ry="3" width="380" height="15" /> 
-    <rect x="0" y="50.0" rx="3" ry="3" width="375" height="15" />
-    <rect x="0" y="73.0" rx="3" ry="3" width="370" height="15" />
-    <rect x="0" y="96.0" rx="3" ry="3" width="365" height="15" />
-    <rect x="0" y="119.0" rx="3" ry="3" width="270" height="15" />
+    <rect x="0" y="27" rx="3" ry="3" width="380" height="15" /> 
+    <rect x="0" y="50" rx="3" ry="3" width="375" height="15" />
+    <rect x="0" y="73" rx="3" ry="3" width="370" height="15" />
+    <rect x="0" y="96" rx="3" ry="3" width="365" height="15" />
+    <rect x="0" y="119" rx="3" ry="3" width="270" height="15" />
   </ContentLoader>
 );
 
