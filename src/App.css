@@ -274,12 +274,13 @@ audio {
 .song-parent {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 0.2rem;
+  align-items: center;
 }
 
 .song-parent:hover {
   background: white;
   color: #424242 !important;
-  margin-bottom: 0.3rem;
 }
 
 .song-parent .title:hover {
@@ -328,7 +329,8 @@ audio {
 }
 
 .play-circle svg {
-  margin-top: 3.5px;
+  margin-left: 0.5rem;
+  display: block;
 }
 
 .song-loading {
