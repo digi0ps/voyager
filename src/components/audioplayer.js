@@ -93,6 +93,7 @@ class AudioPlayer extends Component {
           loaded: true,
         });
         this.audio.load();
+        document.title = this.state.title;
       });
     this.hasBuffered();
   }
@@ -147,6 +148,7 @@ class AudioPlayer extends Component {
       });
       this.updatePlayer();
       this.updatePlays();
+      document.title = this.state.title;
     }
   }
 
@@ -187,7 +189,9 @@ class AudioPlayer extends Component {
             <PreLoader visibility={!this.state.loaded} />
  
             <div className="song-meta" style={{display: this.state.loaded ? 'inherit' : 'none'}}>
+              <span class="pulse"></span>
               <div className="song-icons">
+
                 <span className="is-pulled-right song-heart is-6" onClick={this.updateHeart}>{this.state.hearts}<Icon.Heart size={18} /></span>
                 <span className="is-pulled-right song-eye is-6"><span className="song-plays">{this.state.plays}</span><Icon.Radio size={19} /></span>
               </div>
