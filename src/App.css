@@ -274,8 +274,10 @@ audio {
 .song-parent {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 0.2rem;
   align-items: center;
+  min-height: 2.25rem; 
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .song-parent:hover {
@@ -307,6 +309,7 @@ audio {
   cursor: pointer;
   margin: 0;
   margin-left: 1rem;
+  line-height: 20px;
 }
 
 .song-timestamp {

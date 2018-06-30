@@ -196,11 +196,11 @@ class AudioPlayer extends Component {
               </figure>
               <h1 className="title cereal is-4">
                 {this.state.title}
-                <a className="button art-loading is-loading has-text-centered" style={{visibility: this.state.buffered ? 'hidden' : 'visible'}}>loading</a>
+                <a className="button art-loading is-loading has-text-centered" style={{display: this.state.buffered ? 'none' : 'inherit'}}>loading</a>
               </h1>
               <h2 className="subtitle cereal is-6">{this.state.description}</h2>
             </div>
-            <h2 className="is-pulled-right song-timestamp">{this.state.currentTime ? this.formatSeconds(Math.floor(this.state.currentTime)): '00:00'}/{Math.floor(this.state.duration) ? this.formatSeconds(Math.floor(this.state.duration)) : '00:00'}</h2>
+            <h2 className="is-pulled-right song-timestamp">{this.state.currentTime ? this.formatSeconds(Math.floor(this.state.currentTime)): '0:00'}/{Math.floor(this.state.duration) ? this.formatSeconds(Math.floor(this.state.duration)) : '0:00'}</h2>
             <progress className="progress is-success" value={this.state.duration ? (this.state.currentTime/this.state.duration)*100 : 0} max="100"></progress>
 
             <audio id="audio" title={this.state.title} poster={this.state.art} ref={(audio)=>{this.audio = audio;}}>
