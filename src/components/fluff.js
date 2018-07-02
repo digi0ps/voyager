@@ -7,7 +7,22 @@ import Post from './post.js';
 import api from './api.js';
 
 import * as Icon from 'react-feather'; // eslint-disable-next-line
+
 import ContentLoader from 'react-content-loader';
+
+const PreLoader = props => (
+  <ContentLoader
+    height={65}
+    width={400}
+    speed={2}
+    primaryColor="#fafafa"
+    secondaryColor="#f4f4f4"
+    {...props}
+  >
+    <rect x="15" y="12" rx="3" ry="3" width="100" height="18" /> 
+    <rect x="15" y="37" rx="3" ry="3" width="185" height="30" /> 
+  </ContentLoader>
+);
 
 class Fluff extends Component {
 
@@ -52,7 +67,7 @@ class Fluff extends Component {
           </div>
           <div className="level-item has-text-centered">
             <div>
-              <p className="heading">{this.state.collapsed ? '∫': '∂'}</p>
+              <p className="heading">{this.state.collapsed ? 'Expand All': 'Shrink All'}</p>
               <a className="has-text-dark" onClick={this.collapseAll}>
                 <Icon.Layers />
               </a>
@@ -73,6 +88,16 @@ class Fluff extends Component {
             </div>
           </div>
         </nav>
+
+        {
+          Array.apply(null, Array(2)).map(()=>
+            <div className="columns" style={{display: this.state.loaded ? 'none' : 'inherit'}}>
+              <div className="column is-4 is-offset-4">
+                <PreLoader/>
+              </div>
+            </div>
+          )
+        }
 
         {
           this.state.stories.map((story, id)=>{

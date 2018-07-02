@@ -394,6 +394,15 @@ audio {
   border-radius: 50%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.xkcd-balloon-float {
+  width: 40px;
+  display: fixed;
+}
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
