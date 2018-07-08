@@ -20,7 +20,7 @@ class Home extends Component {
       changelog: false,
       changelogList: [],
       alpha: moment([1998, 3, 6]),
-      nf: moment([2018, 5, 27]),
+      nf: moment([2018, 6, 9]),
       present: moment(),
     };
   }
