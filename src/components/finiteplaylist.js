@@ -55,7 +55,6 @@ class FinitePlaylist extends Component {
     .then(done => {
       this.setState({
         auth: true,
-        attempted: false,
       });
       this.fetchPlaylist();
     });

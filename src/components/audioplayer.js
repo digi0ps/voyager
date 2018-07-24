@@ -133,6 +133,7 @@ class AudioPlayer extends Component {
         });
         this.audio.load();
         this.audio.play();
+        document.title = this.state.title;
       });
   }
 
@@ -148,7 +149,6 @@ class AudioPlayer extends Component {
       });
       this.updatePlayer();
       this.updatePlays();
-      document.title = this.state.title;
     }
   }
 
@@ -172,13 +172,13 @@ class AudioPlayer extends Component {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Previous</p>
-              <a href="" id="contact" className="has-text-dark"><Icon.Rewind /></a>
+              <a href="" id="contact" className="has-text-grey"><Icon.Rewind /></a>
             </div>
           </div>
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Next</p>
-              <a href="" id="fluff" className="has-text-dark"><Icon.FastForward /></a>
+              <a href="" id="fluff" className="has-text-grey"><Icon.FastForward /></a>
             </div>
           </div>
         </nav>
