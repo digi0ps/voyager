@@ -40,6 +40,15 @@ class Post extends Component {
     };
   }
 
+  componentDidMount() {
+    if(this.props.first) {
+      this.loadPost();
+      this.setState({
+        'collapsed': false,
+      });
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if(this.props.collapsed!==nextProps.collapsed) {
       this.setState({
@@ -123,7 +132,7 @@ class Post extends Component {
         <div className="columns">
 
           <div className="column is-4 is-offset-4 remove-padding">
-            <div className="box is-unselectable" style={{paddingBottom: this.state.collapsed ? '0rem': '1.25rem'}}>
+            <div className="box" style={{paddingBottom: this.state.collapsed ? '0rem': '1.25rem'}}>
               <h2 className="subtitle date text-is-small">{this.convertDate(this.state.date)}</h2>
               <h1 className="title is-3 cereal pointer post-title" onClick={this.toggle}>{this.state.title}</h1>
               <div className="content story opensans" style={{display: this.state.collapsed ? 'none': 'inherit'}}>

@@ -6,7 +6,7 @@ import './../App.css';
 import Post from './post.js';
 import api from './api.js';
 
-import * as Icon from 'react-feather'; // eslint-disable-next-line
+import * as Icon from 'react-feather'; 
 
 import ContentLoader from 'react-content-loader';
 
@@ -101,7 +101,7 @@ class Fluff extends Component {
 
         {
           this.state.stories.map((story, id)=>{
-            return <Post key={id} id={story.pk} title={story.title} date={story.date} collapsed={this.state.collapsed} />;
+            return <Post key={id} id={story.pk} title={story.title} date={story.date} collapsed={this.state.collapsed} first={id===0?true:false} />;
           })
         }
          

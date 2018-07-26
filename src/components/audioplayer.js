@@ -158,8 +158,8 @@ class AudioPlayer extends Component {
         <nav className="level is-mobile">
           <div className="level-item has-text-centered">
             <div>
-              <p className="heading">Home</p>
-              <a href="/" className="has-text-dark"><Icon.ArrowLeft /></a>
+              <p className="heading">Fluff</p>
+              <a href="/fluff" className="has-text-dark"><Icon.ArrowLeft /></a>
             </div>
           </div>
           <div className="level-item has-text-centered">
