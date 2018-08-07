@@ -195,8 +195,8 @@ a:hover {
   font-size: 3rem;
 }
 
-.vit-color {
-  color: #3949AB !important;
+.bing-color {
+  color: #26a69a !important;
 }
 
 .xkcd-color {
@@ -204,7 +204,7 @@ a:hover {
 }
 
 .blog-color {
-  color: #D60270 !important;
+  color: #2962ff !important;
 }
 
 .reddit-color {
@@ -425,6 +425,15 @@ audio {
 .portrait {
   max-width: 150% !important;
   margin-left: calc(-25%) !important;
+}
+
+.location {
+  font-size: 10px;
+  font-family: 'Roboto Mono', monospace;
+  color: gray;
+  text-align: center;
+  margin-bottom: -1.5rem;
+  margin-top: -1rem;
 }
 
 @-webkit-keyframes pulse {
