@@ -54,9 +54,9 @@ class Fluff extends Component {
 
   render() {
     return (
-      <div className="site-content">
+      <div className="site-content is-unselectable">
 
-        <nav className="level is-mobile is-unselectable">
+        <nav className="level is-mobile">
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Back</p>

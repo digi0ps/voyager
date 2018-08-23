@@ -84,7 +84,7 @@ class Home extends Component {
             </h1>
             <div className="content">
               <p>Hi, I dabble in all things computer science, math, physics, and design. I'm currently an undergraduate at <span className="bing-color">SUNY Binghamton</span>, majoring in Computer Science.</p>
-              <p>I document <a id="fluff" href="/fluff" class="blog-color">stuff</a>, sometimes, and also post photos on <a href="https://www.instagram.com/jeremyphilemon98" className="has-text-danger">instagram</a>. When I'm not studying, I work on open source projects and share my code with the world on <a href="https://github.com/jeremyphilemon" className="has-text-dark">github</a>, and spend the rest of my time lurking around <span className="reddit-color">reddit</span> and learning new ways to actively make myself better at adulting.</p>
+              <p>I document <a id="fluff" href="/fluff" class="blog-color">stuff</a>, sometimes, and also post photos on <a href="https://www.instagram.com/jrmyphlmn" className="has-text-danger">instagram</a>. When I'm not studying, I work on open source projects sharing my code with the world on <a href="https://github.com/jeremyphilemon" className="has-text-dark">github</a>, and spend the rest of my time lurking around <span className="reddit-color">reddit</span> and learning new ways to actively make myself better at adulting.</p>
               <p>Apart from that, I sometimes make awkward faces and try to win arguments with strangers over the <a className="xkcd-color" href="https://xkcd.com/386/">internet</a>.</p>
               <p>If you're looking to get in touch or just want to send me a joke, then check out the contact page.</p>
               <p>Thanks for dropping by!</p>
