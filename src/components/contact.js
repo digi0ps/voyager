@@ -3,9 +3,10 @@ import 'bulma/css/bulma.css';
 import './../App.css';
 
 import * as Icon from 'react-feather';
+import emoji from 'react-easy-emoji';
 
 class Contact extends Component {
-
+  
   render() {
     return (
       <div className="is-unselectable">
@@ -21,7 +22,7 @@ class Contact extends Component {
 
         <div className="columns">
           <div className="column is-4 is-offset-4 extra-padding currently-working monospace">
-            <h1 className="title cereal home-title"><span role="img" aria-label="postbox">📮</span>  Contact</h1>
+            <h1 className="title cereal home-title"><span role="img" aria-label="postbox">{emoji('📮')}</span>  Contact</h1>
             <div className="content">
               <p>∆ Email is best <a className="contact" href="mailto:jeremyphilemon@outlook.com"><span className="contact-email-margin">jeremyphilemon[@]outlook.com</span></a></p>
               <p>

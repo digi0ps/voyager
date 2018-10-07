@@ -81,10 +81,10 @@ class Home extends Component {
           </div>
           <div className="level-item has-text-centered">
             <div>
-              <p className="heading">Blog</p>
+              <p className="heading">Medium</p>
               <a
                 href="https://www.medium.com/@jeremyphilemon"
-                id="fluff"
+                id="medium"
                 className="has-text-dark"
               >
                 <Icon.Book />
@@ -115,7 +115,7 @@ class Home extends Component {
               </p>
               <p>
                 I document{' '}
-                <a id="fluff" href="/fluff" class="blog-color">
+                <a id="fluff" href="/fluff" className="blog-color">
                   stuff
                 </a>
                 , sometimes, and also post photos on{' '}
