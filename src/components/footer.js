@@ -1,40 +1,36 @@
 import 'bulma/css/bulma.css';
 import './../App.css';
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class Footer extends Component {
   constructor(props) {
     super(props);
-    this.state = { visibility: false };
+    this.state = {visibility: false};
   }
 
   componentDidMount() {
-    let whitelist = ['/fluff', '/', '/contact'];
+    let whitelist = ['/fluff', '/', '/contact', '/classes'];
     if (whitelist.includes(window.location.pathname)) {
-      this.setState({ visibility: true });
+      this.setState({visibility: true});
     }
   }
 
   render() {
     return (
       <footer
-        className="footer is-unselectable whales-margin"
-        style={{
-          display: this.state.visibility ? 'inherit' : 'none'
-        }}
-      >
-        {' '}
-        <div className="container">
-          <div className="is-pulled-right">
-            <img
-              alt="whale"
-              className="whales is-pulled-right"
-              src="https://storage.googleapis.com/jrmyphlmn/images/whales.png"
-            />
-          </div>
+        className = 'footer is-unselectable whales-margin'
+        style = {
+          {
+            display: this.state.visibility ? 'inherit' : 'none'
+          }
+        } > {' '}<div className = 'container'><div className = 'is-pulled-right'><
+          img
+          alt = 'whale'
+          className = 'whales is-pulled-right'
+          src = 'https://storage.googleapis.com/jrmyphlmn/images/whales.png' / >
         </div>
-      </footer>
+        </div>< /footer>
     );
   }
 }
