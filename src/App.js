@@ -25,7 +25,9 @@ class App extends Component {
               <Route exact path="/" render={() => <Redirect to="/" />} />
 
               <TransitionGroup>
-                <CSSTransition key={location.key} classNames="fade" timeout={1000}>
+                <CSSTransition key={location.key} classNames="fade" timeout={{ enter: 500, exit: 0 }}
+                  transitionEnterTimeout={500}
+                  transitionLeaveTimeout={0} >
                   <Switch location={location}>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/fluff" component={Fluff} />

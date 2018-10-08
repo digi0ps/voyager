@@ -7,6 +7,7 @@ import api from './api.js';
 
 import moment from 'moment';
 
+import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import * as Icon from 'react-feather';
 
@@ -19,7 +20,7 @@ class Home extends Component {
       changelogList: [],
       alpha: moment([1998, 3, 6]),
       nf: moment([2018, 7, 26]),
-      present: moment()
+      present: moment(),
     };
   }
 
@@ -66,9 +67,11 @@ class Home extends Component {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Classes</p>
-              <a href="/classes" id="classes" className="has-text-dark">
-                <Icon.BookOpen />
-              </a>
+              <Link to="/classes">
+                <a id="classes" className="has-text-dark">
+                  <Icon.BookOpen />
+                </a>
+              </Link>
             </div>
           </div>
           <div className="level-item has-text-centered">
@@ -94,9 +97,11 @@ class Home extends Component {
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Contact</p>
-              <a href="/contact" id="contact" className="has-text-dark">
-                <Icon.Mail />
-              </a>
+              <Link to="/contact">
+                <a id="contact" className="has-text-dark">
+                  <Icon.Mail />
+                </a>
+              </Link>
             </div>
           </div>
         </nav>
@@ -115,9 +120,11 @@ class Home extends Component {
               </p>
               <p>
                 I document{' '}
-                <a id="fluff" href="/fluff" className="blog-color">
+                <Link to="/fluff">
+                  <a id="fluff" className="blog-color">
                   stuff
-                </a>
+                  </a>
+                </Link>
                 , sometimes, and also post photos on{' '}
                 <a
                   href="https://www.instagram.com/jrmyphlmn"
