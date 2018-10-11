@@ -75,13 +75,15 @@ class Post extends Component {
   loadPost() {
     const id = this.props.id;
     if(this.state.collapsed && !this.state.apiLock) {
-      api.story(id).then(response => {
-        this.setState({
-          loaded: true, 
-          story: response.data,
-          apiLock: true,
+      setTimeout(function() {
+        api.story(id).then(response => {
+          this.setState({
+            loaded: true, 
+            story: response.data,
+            apiLock: true,
+          });
         });
-      });
+      }.bind(this), 250);
     }
   }
 
@@ -105,7 +107,6 @@ class Post extends Component {
               </div>
             </div>
           </div>
-        
         </div>
       );
     }
@@ -135,7 +136,7 @@ class Post extends Component {
             <div className="box" style={{paddingBottom: this.state.collapsed ? '0rem': '1.25rem'}}>
               <h2 className="subtitle date text-is-small">{this.convertDate(this.state.date)}</h2>
               <h1 className="title is-3 cereal pointer post-title" onClick={this.toggle}>{this.state.title}</h1>
-              <div className="content story opensans" style={{display: this.state.collapsed ? 'none': 'inherit'}}>
+              <div className="content story opensans add-fade" style={{display: this.state.collapsed ? 'none': 'inherit'}}>
                 <div dangerouslySetInnerHTML={{ __html: this.state.story.story }} />
               </div>
             </div>

@@ -33,6 +33,11 @@
   font-style: normal
 }
 
+html::-webkit-scrollbar{ background-color: whitesmoke; width: 4px; height: 0;}
+html::-webkit-scrollbar-thumb{ background-color: #bbdefb; }
+::-moz-selection{ background-color: #F50057; color: #ffffff;}
+::selection{ background-color: #F50057; color: #ffffff;}
+
 a {
   color: #6534ff !important;
 }
@@ -64,8 +69,7 @@ a:hover {
   width: 300px !important;
   margin: auto !important;
   -webkit-animation: fadein 350ms ease-in 1.5s;
-  animation-fill-mode:forwards;
-  animation-delay: 1.5s;
+  animation-fill-mode: forwards; 
 }
 
 .whales-margin {
@@ -91,6 +95,11 @@ a:hover {
 .story {
   font-family: Cereal;
   line-height: 24px;
+}
+
+.add-fade {
+  -webkit-animation: fadein 350ms ease-in;
+  animation-fill-mode:forwards;
 }
 
 .box {
@@ -428,8 +437,8 @@ audio {
 }
 
 .portrait {
-  max-width: 150% !important;
-  margin-left: calc(-25%) !important;
+  max-width: 100vw !important;
+  margin-left: calc(100vw - 100vw - 20px) !important;
 }
 
 .location {
@@ -531,7 +540,6 @@ audio {
     max-width: 250% !important;
     margin-left: calc(-75%);
   }
-
   iframe {
     border: none;
     width: 60vw;
@@ -550,5 +558,9 @@ audio {
   .column.is-4-modified, .column.is-4-tablet-modified {
     flex: none;
     width: 50%;
+  }
+  .portrait {
+    max-width: 150% !important;
+    margin-left: calc(-25%) !important;
   }
 }
