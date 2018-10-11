@@ -436,7 +436,7 @@ audio {
   display: fixed;
 }
 
-.portrait {
+.portrait, video {
   max-width: 100vw !important;
   margin-left: calc(100vw - 100vw - 20px) !important;
 }
@@ -535,10 +535,10 @@ audio {
 }
 
 @media (min-width: 769px) {
-  img {
+  img, video {
     height: auto;
     max-width: 250% !important;
-    margin-left: calc(-75%);
+    margin-left: calc(-75%) !important;
   }
   iframe {
     border: none;
