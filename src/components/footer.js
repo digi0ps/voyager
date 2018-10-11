@@ -20,7 +20,7 @@ class Footer extends Component {
     return (
       <footer className='footer is-unselectable whales-margin' style={{display: this.state.visibility ? 'inherit' : 'none'}} >{' '}
         <div className='container'><div className = 'is-pulled-right'>
-          <img alt='whale' className='whales is-pulled-right' src='https://storage.googleapis.com/jrmyphlmn/images/whales.png' />
+          <img alt='whale' className='whales is-pulled-right' src='https://lh3.googleusercontent.com/kJHBy7o7xGN0uaFAOsqQZpIH7PUbWW68znxqoebLt8ylh8qIaqMqqIJ3Kwa9lU6xpvQoBVpnWBUgFFQxN8GsnhHvDHISBg=s1600' />
         </div>
         </div>
       </footer>
