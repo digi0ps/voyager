@@ -34,7 +34,7 @@
 }
 
 html::-webkit-scrollbar{ background-color: whitesmoke; width: 4px; height: 0;}
-html::-webkit-scrollbar-thumb{ background-color: #bbdefb; }
+html::-webkit-scrollbar-thumb{ background-color: #a5192e; }
 ::-moz-selection{ background-color: #F50057; color: #ffffff;}
 ::selection{ background-color: #F50057; color: #ffffff;}
 
@@ -538,7 +538,7 @@ audio {
   img, video {
     height: auto;
     max-width: 250% !important;
-    margin-left: calc(-75%) !important;
+    margin-left: calc(-75%);
   }
   iframe {
     border: none;
